@@ -28,6 +28,7 @@ export interface BarChartProps extends AbstractChartProps {
     segments?: number;
     showBarTops?: boolean;
     showValuesOnTopOfBars?: boolean;
+    onDataPointClick: any;
 }
 declare type BarChartState = {};
 declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
