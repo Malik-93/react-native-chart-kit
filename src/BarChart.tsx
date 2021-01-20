@@ -67,7 +67,7 @@ class BarChart extends AbstractChart<BarChartProps, BarChartState> {
       const barWidth = 32 * this.getBarPercentage();
       return (
         <Rect
-          onPress={() => this.props.onDataPointClick({index: i, item: x})}
+          onPress={() => this.props.onDataPointClick({ index: i, item: x })}
           key={Math.random()}
           x={
             paddingRight +
@@ -81,7 +81,8 @@ class BarChart extends AbstractChart<BarChartProps, BarChartState> {
           rx={barRadius}
           width={barWidth}
           height={(Math.abs(barHeight) / 4) * 3}
-          fill="url(#fillShadowGradient)"
+          // fill=“url(#fillShadowGradient)”
+          fill={(this.props.activeBarIndex !== null && this.props.activeBarIndex !== undefined) ? ((i === this.props.activeBarIndex) ? this.props.activeBarColor : this.props.inactiveBarColor) : "url(#fillShadowGradient)"}
         />
       );
     });
